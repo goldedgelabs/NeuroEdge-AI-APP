@@ -1,22 +1,17 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
 
-export default function AnimatedThemeToggle({ onToggle }) {
+export default function AnimatedThemeToggle() {
   const [isDark, setIsDark] = useState(false);
-
-  const toggle = () => {
-    setIsDark(!isDark);
-    if (onToggle) onToggle(!isDark);
-  };
 
   return (
     <motion.button
-      onClick={toggle}
-      initial={{ scale: 0.8, opacity: 0 }}
-      animate={{ scale: 1, opacity: 1 }}
+      onClick={() => setIsDark(!isDark)}
+      initial={{ opacity: 0, scale: 0.8 }}
+      animate={{ opacity: 1, scale: 1 }}
       whileTap={{ scale: 0.85 }}
-      transition={{ type: "spring", stiffness: 200 }}
-      className="p-2 rounded-full border bg-white text-black shadow"
+      transition={{ type: "spring", stiffness: 250 }}
+      className="p-2 rounded-full border bg-white shadow text-black"
     >
       {isDark ? "🌙" : "☀️"}
     </motion.button>
