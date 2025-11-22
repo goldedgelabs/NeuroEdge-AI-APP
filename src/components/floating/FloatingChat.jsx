@@ -1,0 +1,3 @@
+import React from 'react';
+import { useUI } from '../../context/UIContext';
+export default function FloatingChat(){ const {showFloating,setShowFloating} = useUI(); return (<div className='floating-assistant'>{!showFloating && <button className='floating-button' onClick={()=> setShowFloating(true)}>NE</button>}{showFloating && <div className='panel' style={{width:340,marginBottom:8}}><div style={{display:'flex',justifyContent:'space-between'}}><strong>NeuroEdge</strong><button className='btn' onClick={()=> setShowFloating(false)}>Close</button></div><div style={{height:320,overflow:'auto',marginTop:8}}>Floating chat (mock)</div></div>}</div>) }

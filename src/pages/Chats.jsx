@@ -1,0 +1,1 @@
+import React from 'react'; export default function Chats(){ return <div className='panel'><h2>Chats</h2><p className='small'>Recent conversations appear here.</p></div> }

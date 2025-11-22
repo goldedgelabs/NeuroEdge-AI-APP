@@ -1,0 +1,2 @@
+import React, { useEffect, useRef } from 'react';
+export default function MessageBubble({m}){ const ref=useRef(); useEffect(()=>{ const el=ref.current; requestAnimationFrame(()=> el && el.classList.add('show')); },[]); return (<div ref={ref} className={m.role==='user'? 'msg user':'msg bot'}><div style={{fontSize:12,opacity:0.8}}>{m.role==='user'? 'You':'NeuroEdge'}</div><div style={{marginTop:6}}>{m.text}</div></div>) }

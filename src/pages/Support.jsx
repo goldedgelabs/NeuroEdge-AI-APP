@@ -1,0 +1,1 @@
+import React from 'react'; export default function Support(){ return <div className='panel'><h2>Support</h2></div> }

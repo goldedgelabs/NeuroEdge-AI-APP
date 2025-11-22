@@ -1,0 +1,2 @@
+import React, { useEffect, useState } from 'react';
+export default function NetworkDots(){ const [status,setStatus]=useState('online'); useEffect(()=>{ const u = ()=> setStatus(navigator.onLine? 'online':'offline'); window.addEventListener('online',u); window.addEventListener('offline',u); u(); return ()=>{ window.removeEventListener('online',u); window.removeEventListener('offline',u); } },[]); return (<div className='network-dots'><div className={'network-dot '+(status==='online'? 'online': status==='offline'? 'offline':'reconnecting')}></div></div>) }
