@@ -1,6 +1,5 @@
-'use client';
 // src/components/agents/AgentMetricsCharts.tsx
-
+''use client';';
 import React, { useEffect, useRef } from 'react';
 import { Chart, LineController, LineElement, PointElement, LinearScale, TimeScale, Title, CategoryScale } from 'chart.js';
 import '@/lib/shims/chartjs-adapter-date-fns';
