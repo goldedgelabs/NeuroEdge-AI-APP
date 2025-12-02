@@ -1,6 +1,0 @@
-{
-  "apt_get_exit": 0,
-  "node_check": "/bin/sh: 1: node: not found\n/bin/sh: 1: npm: not found\n",
-  "npm_install_exit": 127,
-  "npm_install_out": "/bin/sh: 1: npm: not found\n"
-}
