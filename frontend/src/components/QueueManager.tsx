@@ -25,21 +25,21 @@ export default function QueueManager(){
   async function load(){
     try{
       const db = await openDB();
-      const tx = db.transaction('requests','readonly');
+      const tx = (db as IDBDatabase).transaction('requests','readonly');
       const req = tx.objectStore('requests').getAll();
       req.onsuccess = ()=> setItems(req.result || []);
     }catch(e){ console.error(e); }
   }
   async function removeAll(){
     const db = await openDB();
-    const tx = db.transaction('requests','readwrite');
+    const tx = (db as IDBDatabase).transaction('requests','readwrite');
     tx.objectStore('requests').clear();
     tx.oncomplete = ()=> load();
   }
 
   async function retryItem(index:number){
     const db = await openDB();
-    const tx = db.transaction('requests','readwrite');
+    const tx = (db as IDBDatabase).transaction('requests','readwrite');
     const store = tx.objectStore('requests');
     const getAll = store.getAll();
     getAll.onsuccess = async ()=>{
@@ -62,7 +62,7 @@ export default function QueueManager(){
 
   async function cancelItem(index:number){
     const db = await openDB();
-    const tx = db.transaction('requests','readwrite');
+    const tx = (db as IDBDatabase).transaction('requests','readwrite');
     const store = tx.objectStore('requests');
     const getAll = store.getAll();
     getAll.onsuccess = ()=>{
@@ -78,7 +78,7 @@ export default function QueueManager(){
 
   async function flushAndReload(){
     const db = await openDB();
-    const tx = db.transaction('requests','readwrite');
+    const tx = (db as IDBDatabase).transaction('requests','readwrite');
     const store = tx.objectStore('requests');
     const getAll = store.getAll();
     getAll.onsuccess = async ()=>{
