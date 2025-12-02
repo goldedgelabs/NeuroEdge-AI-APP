@@ -1,4 +1,4 @@
-''use client';'
+'use client';
 import React, { useEffect, useState } from 'react';
 import { useNeuroEdge } from '../lib/neuroedge/provider';
 export default function AgentsPanel(){

@@ -1,12 +1,12 @@
 // src/components/agents/AgentMetricsCharts.tsx
-''use client';';
+'use client';
 import React, { useEffect, useRef } from 'react';
 import { Chart, LineController, LineElement, PointElement, LinearScale, TimeScale, Title, CategoryScale } from 'chart.js';
 import '@/lib/shims/chartjs-adapter-date-fns';
 
 Chart.register(LineController, LineElement, PointElement, LinearScale, TimeScale, Title, CategoryScale);
 
-export default function AgentMetricsCharts({ metricsStream } : { metricsStream?: { cpu:number, memory:number, rps:number } | undefined }) {
+export default function AgentMetricsCharts({ metricsStream } : { metricsStream?: { cpu:number, memory:number, rps:number } }) {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const chartRef = useRef<Chart|null>(null);
 
