@@ -1,1 +1,0 @@
-import React from 'react'; export default function Premium(){ return <div className='panel'><h2>Premium</h2></div> }

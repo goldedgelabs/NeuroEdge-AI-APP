@@ -1,1 +1,0 @@
-import React from 'react'; export default function Agents(){ return <div className='panel'><h2>Agents</h2></div> }

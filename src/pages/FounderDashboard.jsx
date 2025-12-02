@@ -1,1 +1,0 @@
-import React from 'react'; export default function FounderDashboard(){ return <div className='panel'><h2>Founder Dashboard</h2></div> }

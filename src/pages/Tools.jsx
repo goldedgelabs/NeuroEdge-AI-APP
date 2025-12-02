@@ -1,1 +1,0 @@
-import React from 'react'; export default function Tools(){ return <div className='panel'><h2>Tools</h2></div> }

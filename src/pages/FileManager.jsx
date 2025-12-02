@@ -1,1 +1,0 @@
-import React from 'react'; export default function FileManager(){ return <div className='panel'><h2>Files</h2></div> }

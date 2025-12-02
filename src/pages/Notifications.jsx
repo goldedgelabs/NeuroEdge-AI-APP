@@ -1,1 +1,0 @@
-import React from 'react'; export default function Notifications(){ return <div className='panel'><h2>Notifications</h2></div> }
