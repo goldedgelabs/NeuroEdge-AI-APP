@@ -7,8 +7,6 @@ export default class TSClient {
   async runTask(name: string, payload: any) {
     return axios.post(this.base + '/api/run', { name, payload }).then(r=>r.data)
   }
-}
-
 
   async get(path: string, params?: any) {
     try {
