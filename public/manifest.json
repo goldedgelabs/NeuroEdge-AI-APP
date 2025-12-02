@@ -1,10 +1,10 @@
 {
-  "name": "NeuroEdge AI",
+  "name": "NeuroEdge",
   "short_name": "NeuroEdge",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#ffffff",
-  "theme_color": "#0ea5a4",
+  "background_color": "#0f172a",
+  "theme_color": "#111827",
   "icons": [
     {
       "src": "/icons/icon-192.png",

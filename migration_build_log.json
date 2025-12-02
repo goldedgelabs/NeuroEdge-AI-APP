@@ -1,0 +1,10 @@
+{
+  "npm_install_exit": 127,
+  "tsc_exit": 127,
+  "eslint_exit": 0,
+  "build_exit": 127,
+  "npm_install_out": "/bin/sh: 1: npm: not found\n",
+  "tsc_out": "/bin/sh: 1: npx: not found\n",
+  "eslint_out": "/bin/sh: 1: npx: not found\n",
+  "build_out": "/bin/sh: 1: npm: not found\n"
+}

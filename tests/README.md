@@ -1,1 +1,0 @@
-This folder can hold tests (vitest/playwright)

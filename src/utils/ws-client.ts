@@ -1,54 +1,72 @@
-/**
- * Simple WebSocket client with reconnect and heartbeat.
- * Emits callbacks: onopen, onmessage(obj), onclose, onerror
- */
-export class WSClient {
-  private url: string
-  private ws: WebSocket | null = null
-  private reconnectMs = 1000
-  private pingInterval = 25000
-  private pingTimer: any = null
-  onopen: (() => void) | null = null
-  onmessage: ((data: any) => void) | null = null
-  onclose: (() => void) | null = null
-  onerror: ((err: any) => void) | null = null
+import { EventEmitter } from 'events';
+
+type Msg = { type: string; [k: string]: unknown };
+
+export class WSClient extends EventEmitter {
+  url: string;
+  ws: WebSocket | null = null;
+  reconnectDelay = 1000;
+  heartbeatInterval: unknown = null;
 
   constructor(url: string) {
-    this.url = url
-    this.connect()
+    super();
+    this.url = url;
+    this.connect();
   }
 
   connect() {
     try {
-      this.ws = new WebSocket(this.url)
+      this.ws = new WebSocket(this.url);
       this.ws.onopen = () => {
-        this.reconnectMs = 1000
-        this.startHeartbeat()
-        this.onopen?.()
-      }
+        this.emit('open');
+        this.startHeartbeat();
+      };
       this.ws.onmessage = (ev) => {
-        try { const d = JSON.parse(ev.data); this.onmessage?.(d) } catch(e) { this.onmessage?.(ev.data) }
-      }
+        try {
+          const data = JSON.parse(ev.data);
+          this.emit('message', data);
+        } catch (e) {
+          this.emit('raw', ev.data);
+        }
+      };
       this.ws.onclose = () => {
-        this.stopHeartbeat()
-        this.onclose?.()
-        setTimeout(()=> this.connect(), this.reconnectMs)
-        this.reconnectMs = Math.min(30000, this.reconnectMs * 1.5)
-      }
-      this.ws.onerror = (e) => { this.onerror?.(e) }
-    } catch(e) {
-      setTimeout(()=> this.connect(), this.reconnectMs)
+        this.emit('close');
+        this.stopHeartbeat();
+        setTimeout(() => this.connect(), this.reconnectDelay);
+      };
+      this.ws.onerror = (e) => {
+        this.emit('error', e);
+        try { this.ws?.close(); } catch {}
+      };
+    } catch (e) {
+      this.emit('error', e);
+      setTimeout(() => this.connect(), this.reconnectDelay);
     }
   }
 
   startHeartbeat() {
-    this.stopHeartbeat()
-    this.pingTimer = setInterval(()=>{
-      try { this.ws?.send(JSON.stringify({type:'ping'})) } catch(e) {}
-    }, this.pingInterval)
+    this.heartbeatInterval = setInterval(() => {
+      if (this.ws && this.ws.readyState === WebSocket.OPEN) {
+        this.ws.send(JSON.stringify({ type: 'ping' }));
+      }
+    }, 30000);
   }
-  stopHeartbeat() { if (this.pingTimer) clearInterval(this.pingTimer) }
 
-  send(obj: any) { try { this.ws?.send(JSON.stringify(obj)) } catch(e) {} }
-  close() { this.stopHeartbeat(); this.ws?.close(); this.ws = null }
+  stopHeartbeat() {
+    if (this.heartbeatInterval) clearInterval(this.heartbeatInterval);
+    this.heartbeatInterval = null;
+  }
+
+  send(obj: Msg) {
+    if (this.ws && this.ws.readyState === WebSocket.OPEN) {
+      this.ws.send(JSON.stringify(obj));
+    } else {
+      this.once('open', () => this.send(obj));
+    }
+  }
+
+  close() {
+    this.stopHeartbeat();
+    this.ws?.close();
+  }
 }

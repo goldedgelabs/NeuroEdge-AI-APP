@@ -1,5 +1,1 @@
-'use client'
-import React from 'react'
-export default function Button({ children, className='', ...props }: any){
-  return <button {...props} className={`px-3 py-2 rounded bg-sky-600 text-white ${className}`}>{children}</button>
-}
+'use client'; import React from 'react'; export const Button = (props:any)=> <button {...props} />; export default Button;

@@ -1,0 +1,12 @@
+{
+  "unresolved_imports": [],
+  "duplicates": [],
+  "outdated_patterns": [
+    {
+      "file": "tailwind.config.js",
+      "pattern": "require()"
+    }
+  ],
+  "any_usage": [],
+  "files_scanned": 101
+}

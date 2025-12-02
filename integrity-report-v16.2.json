@@ -1,0 +1,310 @@
+{
+  "unresolved_imports": [
+    {
+      "file": "src/app/floatingChat/page.tsx",
+      "import": "@/components/floatingChat/FloatingChatProvider"
+    },
+    {
+      "file": "src/utils/index.ts",
+      "import": "./api"
+    },
+    {
+      "file": "src/components/ui/index.ts",
+      "import": "./Accordion"
+    },
+    {
+      "file": "src/components/ui/index.ts",
+      "import": "./Alert"
+    },
+    {
+      "file": "src/components/ui/index.ts",
+      "import": "./AspectRatio"
+    },
+    {
+      "file": "src/components/ui/index.ts",
+      "import": "./Avatar"
+    },
+    {
+      "file": "src/components/ui/index.ts",
+      "import": "./AvatarGroup"
+    },
+    {
+      "file": "src/components/ui/index.ts",
+      "import": "./Badge"
+    },
+    {
+      "file": "src/components/ui/index.ts",
+      "import": "./BadgeCount"
+    },
+    {
+      "file": "src/components/ui/index.ts",
+      "import": "./BadgeDot"
+    },
+    {
+      "file": "src/components/ui/index.ts",
+      "import": "./BadgeOutline"
+    },
+    {
+      "file": "src/components/ui/index.ts",
+      "import": "./BadgePill"
+    },
+    {
+      "file": "src/components/ui/index.ts",
+      "import": "./BadgeSmall"
+    },
+    {
+      "file": "src/components/ui/index.ts",
+      "import": "./Breadcrumb"
+    },
+    {
+      "file": "src/components/ui/index.ts",
+      "import": "./Button"
+    },
+    {
+      "file": "src/components/ui/index.ts",
+      "import": "./Calendar"
+    },
+    {
+      "file": "src/components/ui/index.ts",
+      "import": "./Card"
+    },
+    {
+      "file": "src/components/ui/index.ts",
+      "import": "./Checkbox"
+    },
+    {
+      "file": "src/components/ui/index.ts",
+      "import": "./Chip"
+    },
+    {
+      "file": "src/components/ui/index.ts",
+      "import": "./Collapsible"
+    },
+    {
+      "file": "src/components/ui/index.ts",
+      "import": "./Command"
+    },
+    {
+      "file": "src/components/ui/index.ts",
+      "import": "./ContextMenu"
+    },
+    {
+      "file": "src/components/ui/index.ts",
+      "import": "./DatePicker"
+    },
+    {
+      "file": "src/components/ui/index.ts",
+      "import": "./Dialog"
+    },
+    {
+      "file": "src/components/ui/index.ts",
+      "import": "./Dropdown"
+    },
+    {
+      "file": "src/components/ui/index.ts",
+      "import": "./DropdownMenu"
+    },
+    {
+      "file": "src/components/ui/index.ts",
+      "import": "./FileUpload"
+    },
+    {
+      "file": "src/components/ui/index.ts",
+      "import": "./Footer"
+    },
+    {
+      "file": "src/components/ui/index.ts",
+      "import": "./Form"
+    },
+    {
+      "file": "src/components/ui/index.ts",
+      "import": "./Grid"
+    },
+    {
+      "file": "src/components/ui/index.ts",
+      "import": "./Header"
+    },
+    {
+      "file": "src/components/ui/index.ts",
+      "import": "./HoverCard"
+    },
+    {
+      "file": "src/components/ui/index.ts",
+      "import": "./Icon"
+    },
+    {
+      "file": "src/components/ui/index.ts",
+      "import": "./Image"
+    },
+    {
+      "file": "src/components/ui/index.ts",
+      "import": "./Input"
+    },
+    {
+      "file": "src/components/ui/index.ts",
+      "import": "./Label"
+    },
+    {
+      "file": "src/components/ui/index.ts",
+      "import": "./Link"
+    },
+    {
+      "file": "src/components/ui/index.ts",
+      "import": "./List"
+    },
+    {
+      "file": "src/components/ui/index.ts",
+      "import": "./Menu"
+    },
+    {
+      "file": "src/components/ui/index.ts",
+      "import": "./Menubar"
+    },
+    {
+      "file": "src/components/ui/index.ts",
+      "import": "./Navigation"
+    },
+    {
+      "file": "src/components/ui/index.ts",
+      "import": "./NavigationItem"
+    },
+    {
+      "file": "src/components/ui/index.ts",
+      "import": "./NavigationMenu"
+    },
+    {
+      "file": "src/components/ui/index.ts",
+      "import": "./Pagination"
+    },
+    {
+      "file": "src/components/ui/index.ts",
+      "import": "./Popover"
+    },
+    {
+      "file": "src/components/ui/index.ts",
+      "import": "./Progress"
+    },
+    {
+      "file": "src/components/ui/index.ts",
+      "import": "./RadioGroup"
+    },
+    {
+      "file": "src/components/ui/index.ts",
+      "import": "./ScrollArea"
+    },
+    {
+      "file": "src/components/ui/index.ts",
+      "import": "./Search"
+    },
+    {
+      "file": "src/components/ui/index.ts",
+      "import": "./Select"
+    },
+    {
+      "file": "src/components/ui/index.ts",
+      "import": "./Separator"
+    },
+    {
+      "file": "src/components/ui/index.ts",
+      "import": "./Sheet"
+    },
+    {
+      "file": "src/components/ui/index.ts",
+      "import": "./Skeleton"
+    },
+    {
+      "file": "src/components/ui/index.ts",
+      "import": "./Slider"
+    },
+    {
+      "file": "src/components/ui/index.ts",
+      "import": "./Spinner"
+    },
+    {
+      "file": "src/components/ui/index.ts",
+      "import": "./Switch"
+    },
+    {
+      "file": "src/components/ui/index.ts",
+      "import": "./Switcher"
+    },
+    {
+      "file": "src/components/ui/index.ts",
+      "import": "./Table"
+    },
+    {
+      "file": "src/components/ui/index.ts",
+      "import": "./Tabs"
+    },
+    {
+      "file": "src/components/ui/index.ts",
+      "import": "./Toast"
+    },
+    {
+      "file": "src/components/ui/index.ts",
+      "import": "./ToastProvider"
+    },
+    {
+      "file": "src/components/ui/index.ts",
+      "import": "./Toggle"
+    },
+    {
+      "file": "src/components/ui/index.ts",
+      "import": "./Tooltip"
+    },
+    {
+      "file": "src/components/ui/index.ts",
+      "import": "./TreeView"
+    },
+    {
+      "file": "src/components/ui/index.ts",
+      "import": "./Typography"
+    },
+    {
+      "file": "src/components/floatingChat/index.ts",
+      "import": "./FloatingChatProvider"
+    },
+    {
+      "file": "src/components/floatingChat/index.ts",
+      "import": "./FloatingChatButton"
+    },
+    {
+      "file": "src/components/floatingChat/index.ts",
+      "import": "./FloatingChatWindow"
+    },
+    {
+      "file": "src/_archived_unused_v16.2/src/components/chat/Toolbar.tsx",
+      "import": "@/components/ui/Button"
+    },
+    {
+      "file": "src/_archived_unused_v16.2/src/components/floatingChat/FloatingChatWindow.tsx",
+      "import": "@/components/ui/Button"
+    },
+    {
+      "file": "src/_archived_unused_v16.2/src/components/floatingChat/PermissionModal.tsx",
+      "import": "@/components/ui/Button"
+    },
+    {
+      "file": "src/_archived_unused_v16.2/src/components/floatingChat/KeyboardHelp.tsx",
+      "import": "@/components/ui/Button"
+    },
+    {
+      "file": "src/_archived_unused_v16.2/src/_unused_backup_v16.1/src/app/chat/page.tsx",
+      "import": "../../components/chat/ChatLayout"
+    }
+  ],
+  "unused_files": [
+    "src/utils/ws-client.ts",
+    "src/store/chat.ts",
+    "src/lib/auth.ts"
+  ],
+  "duplicates": [],
+  "outdated_patterns": [
+    {
+      "file": "tailwind.config.js",
+      "pattern": "require()"
+    }
+  ],
+  "any_usage": [],
+  "files_scanned": 99
+}
