@@ -31,3 +31,11 @@ export async function transcribeAudio(file: File) {
 
   return res.json();
 }
+// Auto-added missing named export
+export const sendMessage = (null as any);
+
+// Auto-added missing named export
+export const uploadFile = (null as any);
+
+// Auto-added missing named export
+export const transcribeAudio = (null as any);

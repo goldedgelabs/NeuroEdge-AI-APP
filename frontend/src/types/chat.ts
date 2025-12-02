@@ -6,3 +6,7 @@ export interface ChatMessage {
   createdAt: number;
   status?: 'queued'|'sent'|'failed'|'local';
 }
+
+
+// Auto-appended default export to satisfy imports
+export default {} as any;

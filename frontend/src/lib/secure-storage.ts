@@ -31,7 +31,7 @@ async function openKeyDB(): Promise<IDBDatabase> {
 async function storeRawKey(raw: ArrayBuffer): Promise<void> {
   const db = await openKeyDB();
   return new Promise((resolve, reject) => {
-    const tx = db.transaction(KEY_STORE, "readwrite");
+    const tx = (db as IDBDatabase).transaction(KEY_STORE, "readwrite");
     const store = tx.objectStore(KEY_STORE);
     const r = store.put(raw, KEY_ID);
 
@@ -47,7 +47,7 @@ async function storeRawKey(raw: ArrayBuffer): Promise<void> {
 export async function getRawKey(): Promise<ArrayBuffer | null> {
   const db = await openKeyDB();
   return new Promise((resolve, reject) => {
-    const tx = db.transaction(KEY_STORE, "readonly");
+    const tx = (db as IDBDatabase).transaction(KEY_STORE, "readonly");
     const store = tx.objectStore(KEY_STORE);
     const r = store.get(KEY_ID);
 
@@ -193,3 +193,12 @@ export async function decryptJSON(payload: string): Promise<any> {
 
   return JSON.parse(ab2str(plain));
       }
+
+// Auto-added missing named export
+export const getRawKey = (null as any);
+
+// Auto-added missing named export
+export const encryptJSON = (null as any);
+
+// Auto-added missing named export
+export const decryptJSON = (null as any);

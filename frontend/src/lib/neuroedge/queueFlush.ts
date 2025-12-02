@@ -4,7 +4,7 @@ export async function flushQueuedRequests(){
     const dbReq = indexedDB.open('neuroedge-requests', 1);
     dbReq.onsuccess = async ()=>{
       const db = dbReq.result;
-      const tx = db.transaction('requests','readwrite');
+      const tx = (db as IDBDatabase).transaction('requests','readwrite');
       const store = tx.objectStore('requests');
       const allReq = store.getAll();
       allReq.onsuccess = async ()=>{

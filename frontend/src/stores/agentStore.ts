@@ -1,7 +1,13 @@
 import create from 'zustand';
 import agentsData from '@/data/agents.json';
 
-export type Agent = { id:string; name:string; status:string; events:number };
+export interface Agent {
+  id: string;
+  name: string;
+  status: string;
+  events: number;
+}
+
 
 type AgentState = {
   agents: Agent[];
@@ -20,3 +26,6 @@ export const useAgentStore = create<AgentState>((set,get)=>({
   getPage:()=>{ const {page,perPage,agents}=get(); const s=(page-1)*perPage; return agents.slice(s,s+perPage); },
   find:(id)=> get().agents.find(a=>a.id===id)
 }));
+
+
+export type { Agent as AgentType } from '@/types/models';

@@ -26,36 +26,13 @@
     "paths": {
       "@/*": [
         "src/*"
-      ],
-      "@/app/*": [
-        "src/app/*"
-      ],
-      "@/components/*": [
-        "src/components/*"
-      ],
-      "@/stores/*": [
-        "src/stores/*"
-      ],
-      "@/lib/*": [
-        "src/lib/*"
-      ],
-      "@/hooks/*": [
-        "src/hooks/*"
-      ],
-      "@/utils/*": [
-        "src/utils/*"
-      ],
-      "@/config/*": [
-        "src/config/*"
-      ],
-      "@/types/*": [
-        "src/types/*"
       ]
     },
-    "noImplicitAny": false,
+    "noImplicitAny": true,
     "typeRoots": [
       "./src/types"
-    ]
+    ],
+    "strictNullChecks": false
   },
   "include": [
     "next-env.d.ts",

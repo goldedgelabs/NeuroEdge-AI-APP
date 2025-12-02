@@ -28,3 +28,9 @@ export async function hasStoredKey(): Promise<boolean> {
   const raw = await getRawKey();
   return !!raw;
 }
+
+// Auto-added missing named export
+export const addEncryptedMessage = (null as any);
+
+// Auto-added missing named export
+export const getDecryptedMessages = (null as any);

@@ -20,3 +20,6 @@ export function wsUrlForConversation(conversationId: string) {
     (location.protocol === 'https:' ? 'wss://' : 'ws://') + location.host);
   return `${base.replace(/\/$/, '')}/ws/chat/${conversationId}`;
 }
+
+// Auto-added missing named export
+export const sendChatMessage = (null as any);

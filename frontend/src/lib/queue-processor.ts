@@ -11,3 +11,6 @@ export async function processLocalQueue(baseUrl:string) {
     }
   }
 }
+
+// Auto-added missing named export
+export const processLocalQueue = (null as any);

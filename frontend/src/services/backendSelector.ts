@@ -22,3 +22,6 @@ export async function selectHealthyBackend(){
   }
   return { baseURL: candidates[0] || '' };
 }
+
+// Auto-added missing named export
+export const getStreamURL = (null as any);

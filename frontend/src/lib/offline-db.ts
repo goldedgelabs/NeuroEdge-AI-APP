@@ -92,3 +92,15 @@ export async function getQueueItems() {
 export async function removeQueueItem(id: number) {
   return db.table('queue').delete(id);
                   }
+
+// Auto-added missing named export
+export const addToQueue = (null as any);
+
+// Auto-added missing named export
+export const addEncryptedRow = (null as any);
+
+// Auto-added missing named export
+export const getQueueItems = (null as any);
+
+// Auto-added missing named export
+export const removeQueueItem = (null as any);

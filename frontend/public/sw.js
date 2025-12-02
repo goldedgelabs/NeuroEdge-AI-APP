@@ -97,7 +97,7 @@ function idbOpen() {
 
 async function queueRequest(obj) {
   const db = await idbOpen();
-  const tx = db.transaction('requests', 'readwrite');
+  const tx = (db as IDBDatabase).transaction('requests', 'readwrite');
   tx.objectStore('requests').add(obj);
   await tx.complete;
   if ('sync' in self.registration) {
@@ -113,7 +113,7 @@ self.addEventListener('sync', (event) => {
 
 async function flushQueue() {
   const db = await idbOpen();
-  const tx = db.transaction('requests', 'readwrite');
+  const tx = (db as IDBDatabase).transaction('requests', 'readwrite');
   const store = tx.objectStore('requests');
   const allReq = store.getAll();
   await new Promise((res, rej) => { allReq.onsuccess = ()=>res(allReq.result); allReq.onerror = ()=>rej(allReq.error); });
@@ -125,7 +125,7 @@ async function flushQueue() {
       return;
     }
   }
-  const clearTx = db.transaction('requests', 'readwrite');
+  const clearTx = (db as IDBDatabase).transaction('requests', 'readwrite');
   clearTx.objectStore('requests').clear();
   await new Promise((res, rej) => { clearTx.oncomplete = ()=>res(); clearTx.onerror = ()=>rej(clearTx.error); });
 }

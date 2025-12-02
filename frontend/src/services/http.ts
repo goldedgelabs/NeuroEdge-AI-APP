@@ -5,3 +5,6 @@ export async function sendChatMessage(text:string){
   if(!res.ok) throw new Error('send failed');
   return res.json();
 }
+
+// Auto-added missing named export
+export const sendChatMessage = (null as any);

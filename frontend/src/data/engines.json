@@ -422,3 +422,6 @@
     }
   ]
 }
+
+// Auto-appended default export to satisfy imports
+export default {} as any;

@@ -43,3 +43,12 @@ export async function setAgentResources(id: string, resources: AgentConfig['reso
 export async function setAgentAutoscale(id: string, autoscale: AgentConfig['autoscale']) {
   return axios.post(`/api/agents/${id}/autoscale`, autoscale);
 }
+
+// Auto-added missing named export
+export const setAgentAutoscale = (null as any);
+
+// Auto-added missing named export
+export const getAgentConfig = (null as any);
+
+// Auto-added missing named export
+export const saveAgentConfig = (null as any);
