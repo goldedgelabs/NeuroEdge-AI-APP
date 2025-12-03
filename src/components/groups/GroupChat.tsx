@@ -1,1 +1,10 @@
-'use client'; import React,{useState} from 'react'; import { useChatStore } from '@/store/chat'; import Button from '@/components/ui/Button'; export default function GroupChat({groupId}:any){ const msgs = useChatStore(s=>s.messages.filter((m:any)=>m.conversationId===groupId)); const [v,setV]=useState(''); const send = async ()=>{ if(!v) return; useChatStore.getState().messages.push({id:Date.now().toString(),conversationId:groupId,sender:'user',text:v}); setV(''); }; return (<div className='flex flex-col h-full'><div className='flex-1 overflow-auto p-3'>{msgs.map(m=>(<div key={m.id}>{m.text}</div>))}</div><div className='p-3 border-t flex gap-2'><input className='flex-1' value={v} onChange={e=>setV(e.target.value)} /><Button onClick={send}>Send</Button></div></div>); }
+"use client";
+
+export default function GroupChat({ id }: { id: string }) {
+  return (
+    <div className="p-4">
+      <h2 className="text-xl font-semibold">Group Chat: {id}</h2>
+      <p className="text-muted-foreground">Chat messages will load here.</p>
+    </div>
+  );
+}
