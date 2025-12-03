@@ -1,0 +1,1 @@
+'use client'; import React from 'react'; import Link from 'next/link'; const groups=[{id:'g1',name:'NeuroEdge Community',members:1200},{id:'g2',name:'WDC Wallet Users',members:340}]; export default function GroupList(){ return (<div className='p-4'><h3>Groups</h3><ul>{groups.map(g=>(<li key={g.id}><Link href={'/groups/'+g.id}>{g.name} ({g.members})</Link></li>))}</ul></div>); }

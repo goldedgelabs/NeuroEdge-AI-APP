@@ -1,0 +1,1 @@
+import React from 'react'; import GroupChat from '@/components/groups/GroupChat'; export default function GroupPage({params}:any){ const {id}=params; return (<div className='h-screen p-4 flex'><aside className='w-80 border-r p-3'>Members</aside><main className='flex-1'><GroupChat groupId={id} /></main></div>); }

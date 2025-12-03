@@ -1,0 +1,1 @@
+import React from 'react'; import GroupList from '@/components/groups/GroupList'; export default function GroupsPage(){ return (<main className='p-6'><h1 className='text-2xl font-bold'>Groups</h1><GroupList /></main>); }
