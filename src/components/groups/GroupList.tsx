@@ -1,1 +1,24 @@
-'use client'; import React from 'react'; import Link from 'next/link'; const groups=[{id:'g1',name:'NeuroEdge Community',members:1200},{id:'g2',name:'WDC Wallet Users',members:340}]; export default function GroupList(){ return (<div className='p-4'><h3>Groups</h3><ul>{groups.map(g=>(<li key={g.id}><Link href={'/groups/'+g.id}>{g.name} ({g.members})</Link></li>))}</ul></div>); }
+"use client";
+
+import Link from "next/link";
+
+export default function GroupList() {
+  const groups = [
+    { id: "general", name: "General" },
+    { id: "wallet", name: "Wallet" }
+  ];
+
+  return (
+    <div className="p-4 space-y-3">
+      {groups.map(g => (
+        <Link
+          key={g.id}
+          href={`/groups/${g.id}`}
+          className="block p-3 rounded-lg border hover:bg-accent"
+        >
+          {g.name}
+        </Link>
+      ))}
+    </div>
+  );
+}
